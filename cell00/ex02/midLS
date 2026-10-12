@@ -1,1 +1,1 @@
-echo "ls -m" > midLS
+ls -m
