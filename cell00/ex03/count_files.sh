@@ -1,1 +1,1 @@
-echo "ls -1 | wc -l" > count_files.sh
+ls -1 | wc -l
