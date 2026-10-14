@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.parallax {
+    height: 100%; 
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image-1 {
+    background-image: url('https://i.imgflip.com/5u9lxu.png'); 
+}
+
+.bg-image-2 {
+    background-image: url('https://wallpapers.com/images/hd/cool-roblox-characters-in-the-city-0j3svw9jviobxugg.jpg'); 
+}
+
+.black-block {
+    height: 400px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-text {
+    color: white;
+    font-size: 36px;
+}
