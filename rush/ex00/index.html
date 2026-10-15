@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ส่วนหัวของเอกสาร HTML: กำหนดการเข้ารหัส, การแสดงผลบนมือถือ, SEO และไฟล์ CSS/Font -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GameZone - Discover the best games across all genres. Browse top-rated RPGs, Action, and Strategy games.">
+    <title>GameZone - Game Recommendations</title>
+    <!-- ลิงก์เชื่อมโยงไฟล์สไตล์ CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ฟอนต์ภายนอก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ======================================================== -->
+    <!-- แถบเมนูด้านบน (Sticky Navigation Bar)                      -->
+    <!-- ตรึงอยู่ด้านบนสุดตลอดเวลา เพื่อให้ผู้ใช้กดเลื่อนไปยังส่วนต่างๆ ได้สะดวก -->
+    <!-- ======================================================== -->
+    <nav id="navbar">
+        <!-- โลโก้และชื่อเว็บไซต์ -->
+        <div class="nav-logo">
+            <span class="logo-icon">&#127918;</span>
+            <span class="logo-text">GameZone</span>
+        </div>
+        <!-- รายการลิงก์เมนู (กดแล้วเลื่อนไปยัง Section ตาม ID ด้วย Smooth Scroll) -->
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#featured" class="nav-link">Featured</a></li>
+            <li><a href="#games" class="nav-link">Games</a></li>
+            <li><a href="#quiz" class="nav-link">Find My Game</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <!-- ปุ่มสลับโหมดมืด / โหมดสว่าง (Dark / Light Mode) -->
+        <button id="dark-mode-btn" title="Toggle Dark/Light Mode">&#127769;</button>
+        <!-- ปุ่ม 3 ขีด (Hamburger) สำหรับเปิดเมนูบนหน้าจอมือถือ -->
+        <button class="nav-hamburger" id="hamburger-btn" aria-label="Open menu">&#9776;</button>
+    </nav>
+
+    <!-- เมนูด้านข้างสำหรับมือถือ (Mobile Drawer Menu): จะเลื่อนออกมาเมื่อกดปุ่ม Hamburger -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="close-menu-btn" class="close-menu">&#10005;</button>
+        <ul>
+            <li><a href="#hero" class="mobile-link">Home</a></li>
+            <li><a href="#featured" class="mobile-link">Featured</a></li>
+            <li><a href="#games" class="mobile-link">Games</a></li>
+            <li><a href="#quiz" class="mobile-link">Find My Game</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+        </ul>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- SECTION 1: HERO (หน้าแรก/ส่วนต้อนรับ)                         -->
+    <!-- แสดงข้อความต้อนรับ คำโปรย และปุ่ม Action ลัดพาไปยังส่วนอื่นของเว็บ -->
+    <!-- ======================================================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-tag">&#128379; Your Ultimate Game Guide</p>
+            <h1 class="hero-title">Discover Your<br><span class="gradient-text">Next Adventure</span></h1>
+            <p class="hero-desc">Explore hand-picked game recommendations across RPG, Action, and Strategy genres. Find your perfect game today.</p>
+            <!-- ปุ่ม Action ลัด: กดเพื่อเลื่อนลงไปดูเกม หรือไปเล่นควิซ -->
+            <div class="hero-buttons">
+                <a href="#games" class="btn-primary" id="explore-btn">Explore Games</a>
+                <a href="#quiz" class="btn-secondary" id="quiz-btn">Find My Game &#8594;</a>
+            </div>
+        </div>
+        <!-- ข้อความบอกใบ้ให้เลื่อนหน้าจอลงไปดูเนื้อหา -->
+        <div class="hero-scroll-hint">&#9660; Scroll to explore</div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- SECTION 2: FEATURED GAME (เกมแนะนำพิเศษประจำเว็บ)            -->
+    <!-- แสดงเกมเด่น (Elden Ring) พร้อมภาพขนาดใหญ่ รายละเอียด และคะแนนรีวิว -->
+    <!-- ======================================================== -->
+    <section id="featured" class="featured-section">
+        <div class="section-header">
+            <span class="section-tag">&#128293; Editor's Pick</span>
+            <h2 class="section-title">Featured Game</h2>
+        </div>
+        <div class="featured-card">
+            <!-- ส่วนรูปภาพและป้ายรางวัล -->
+            <div class="featured-img-wrap">
+                <img src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg"
+                     alt="Elden Ring - Featured Game"
+                     class="featured-img"
+                     onerror="this.src='https://placehold.co/600x350/1a1a2e/c084fc?text=Elden+Ring'">
+                <span class="featured-badge">Game of the Year</span>
+            </div>
+            <!-- ส่วนข้อมูลรายละเอียดของเกมเด่น -->
+            <div class="featured-info">
+                <div class="genre-tag">&#9876; Action RPG</div>
+                <h3 class="featured-title">Elden Ring</h3>
+                <!-- คะแนนรีวิวรูปดาว -->
+                <div class="star-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-num">9.6 / 10</span>
+                </div>
+                <!-- คำอธิบายเนื้อเรื่องย่อ -->
+                <p class="featured-desc">
+                    Developed by FromSoftware, Elden Ring is an epic open-world action RPG that delivers a vast, breathtaking world filled with mystery, danger, and unforgettable boss battles. Crafted in collaboration with George R.R. Martin.
+                </p>
+                <!-- ป้ายแท็กคุณสมบัติของเกม -->
+                <div class="featured-tags">
+                    <span class="tag">Open World</span>
+                    <span class="tag">Dark Fantasy</span>
+                    <span class="tag">Challenging</span>
+                    <span class="tag">Multiplayer</span>
+                </div>
+                <!-- ข้อมูลปีที่ออก ผู้พัฒนา และแพลตฟอร์ม -->
+                <div class="featured-meta">
+                    <span>&#128197; Released: 2022</span>
+                    <span>&#127970; FromSoftware</span>
+                    <span>&#128187; PC / Console</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- SECTION 3: GAME CARDS + FILTER (รายการเกมทั้งหมดและปุ่มกรอง)    -->
+    <!-- รวมการ์ดเกม 6 เกม พร้อมปุ่ม Filter กรองตามแนวเกม และปุ่ม Details  -->
+    <!-- ======================================================== -->
+    <section id="games" class="games-section">
+        <div class="section-header">
+            <span class="section-tag">&#127919; Browse All</span>
+            <h2 class="section-title">Game Recommendations</h2>
+            <p class="section-sub">Filter by genre to find your perfect match</p>
+        </div>
+
+        <!-- แถบปุ่มกรองแนวเกม (คลิกแล้ว JS จะกรองการ์ดเกมที่ตรงกับหมวดหมู่นั้นๆ) -->
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" data-filter="all" id="filter-all">All Games</button>
+            <button class="filter-btn" data-filter="rpg" id="filter-rpg">&#9876; RPG</button>
+            <button class="filter-btn" data-filter="action" id="filter-action">&#128165; Action</button>
+            <button class="filter-btn" data-filter="strategy" id="filter-strategy">&#129504; Strategy</button>
+            <button class="filter-btn" data-filter="adventure" id="filter-adventure">&#128506; Adventure</button>
+        </div>
+
+        <!-- พื้นที่แสดงการ์ดเกมทั้งหมด จัดด้วย CSS Grid -->
+        <div class="games-grid" id="games-grid">
+
+            <!-- การ์ดที่ 1: Elden Ring (แนว RPG) -->
+            <div class="game-card" data-genre="rpg" id="card-elden-ring">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg"
+                         alt="Elden Ring" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/c084fc?text=Elden+Ring'">
+                    <span class="card-genre-badge">RPG</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Elden Ring</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.6</span></div>
+                    <p class="card-desc">Vast open world, brutal combat, stunning dark fantasy lore by FromSoftware x George R.R. Martin.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Console</span>
+                        <!-- ปุ่ม Details: กดแล้วเรียกฟังก์ชัน JS showDetail('elden-ring') เพื่อเปิดหน้าต่าง Popup Modal -->
+                        <button class="card-btn" id="btn-elden-ring" onclick="showDetail('elden-ring')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 2: Cyberpunk 2077 (แนว Action) -->
+            <div class="game-card" data-genre="action" id="card-cyberpunk">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg"
+                         alt="Cyberpunk 2077" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/facc15?text=Cyberpunk+2077'">
+                    <span class="card-genre-badge">Action</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Cyberpunk 2077</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>8.5</span></div>
+                    <p class="card-desc">Neon-lit Night City awaits in this open-world action RPG with deep story and stunning visuals.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Console</span>
+                        <button class="card-btn" id="btn-cyberpunk" onclick="showDetail('cyberpunk')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 3: Civilization VI (แนว Strategy) -->
+            <div class="game-card" data-genre="strategy" id="card-civilization">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/289070/header.jpg"
+                         alt="Civilization VI" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/22d3ee?text=Civilization+VI'">
+                    <span class="card-genre-badge">Strategy</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Civilization VI</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.2</span></div>
+                    <p class="card-desc">Build an empire to stand the test of time. The best turn-based strategy experience ever made.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Mobile</span>
+                        <button class="card-btn" id="btn-civilization" onclick="showDetail('civilization')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 4: Zelda: Tears of the Kingdom (แนว Adventure) -->
+            <div class="game-card" data-genre="adventure" id="card-zelda">
+                <div class="card-img-wrap">
+                    <img src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_400/v1/ncom/software/switch/70010000063714/c04f36ff20c6d51b34bf7a7a86b0ab0a0e9a11bc76a638b6a3d1e6e6408baae0"
+                         alt="Zelda Tears of the Kingdom" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/4ade80?text=Zelda+TOTK'">
+                    <span class="card-genre-badge">Adventure</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Zelda: Tears of the Kingdom</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.8</span></div>
+                    <p class="card-desc">Explore the skies of Hyrule in a groundbreaking adventure with limitless creativity and discovery.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#127918; Nintendo Switch</span>
+                        <button class="card-btn" id="btn-zelda" onclick="showDetail('zelda')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 5: Grand Theft Auto V (แนว Action) -->
+            <div class="game-card" data-genre="action" id="card-gta5">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg"
+                         alt="GTA V" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/f97316?text=GTA+V'">
+                    <span class="card-genre-badge">Action</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Grand Theft Auto V</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.0</span></div>
+                    <p class="card-desc">An iconic open-world crime epic with an unmatched online multiplayer experience.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Console</span>
+                        <button class="card-btn" id="btn-gta5" onclick="showDetail('gta5')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 6: The Witcher 3: Wild Hunt (แนว RPG) -->
+            <div class="game-card" data-genre="rpg" id="card-witcher">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg"
+                         alt="The Witcher 3" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/a78bfa?text=Witcher+3'">
+                    <span class="card-genre-badge">RPG</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">The Witcher 3: Wild Hunt</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.5</span></div>
+                    <p class="card-desc">The legendary open-world RPG with the richest storytelling and most memorable characters in gaming.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Console</span>
+                        <button class="card-btn" id="btn-witcher3" onclick="showDetail('witcher3')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- SECTION 4: FIND MY GAME QUIZ (มินิเกมค้นหาเกมที่เหมาะกับตัวคุณ)  -->
+    <!-- ส่วนตอบคำถามเชิงโต้ตอบ ให้ผู้ใช้ตอบเพื่อรับคำแนะนำเกมที่ตรงใจ     -->
+    <!-- ======================================================== -->
+    <section id="quiz" class="quiz-section">
+        <div class="section-header">
+            <span class="section-tag">&#10024; Interactive</span>
+            <h2 class="section-title">Find My Game</h2>
+            <p class="section-sub">Answer a few questions to get a personalized recommendation</p>
+        </div>
+        <div class="quiz-card" id="quiz-card">
+            <!-- หลอดแสดงความคืบหน้าของคำถาม (Progress Bar) -->
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+            </div>
+            <!-- กล่องแสดงคำถามและตัวเลือก (JS จะเปลี่ยนข้อความในนี้) -->
+            <div id="quiz-content">
+                <p class="quiz-question" id="quiz-question">What kind of experience do you enjoy most?</p>
+                <div class="quiz-options" id="quiz-options">
+                    <button class="quiz-opt" data-value="story" id="opt-story">&#128214; Deep storylines and characters</button>
+                    <button class="quiz-opt" data-value="action" id="opt-action">&#128165; Fast-paced action and combat</button>
+                    <button class="quiz-opt" data-value="think" id="opt-think">&#129504; Strategic thinking and planning</button>
+                    <button class="quiz-opt" data-value="explore" id="opt-explore">&#128506; Exploration and discovery</button>
+                </div>
+            </div>
+            <!-- กล่องแสดงผลลัพธ์เกมที่แนะนำ (ซ่อนไว้ก่อน และจะแสดงเมื่อตอบครบทุกข้อ) -->
+            <div id="quiz-result" class="quiz-result hidden">
+                <div class="result-icon" id="result-icon">&#127918;</div>
+                <h3 id="result-title">Your Game Match!</h3>
+                <p id="result-game" class="result-game-name"></p>
+                <p id="result-desc" class="result-desc-text"></p>
+                <!-- ปุ่มกดเริ่มตอบคำถามใหม่อีกครั้ง -->
+                <button id="quiz-restart" class="btn-primary" onclick="restartQuiz()">Try Again &#128260;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- SECTION 5: ABOUT (เกี่ยวกับเราและทีมงาน)                      -->
+    <!-- ข้อมูลเกี่ยวกับเว็บไซต์ ตัวเลขสถิติ และข้อมูลสมาชิกผู้พัฒนาเว็บ   -->
+    <!-- ======================================================== -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="section-header">
+                <span class="section-tag">&#128126; About Us</span>
+                <h2 class="section-title">About GameZone</h2>
+            </div>
+            <p class="about-text">
+                GameZone is a curated game recommendation website built with HTML, CSS, and JavaScript.
+                We help gamers discover incredible games across every genre from epic RPGs to thrilling action games
+                and mind-bending strategy titles.
+            </p>
+            <!-- กล่องสถิติของเว็บไซต์ (Stats Cards) -->
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Games Listed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Genres</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free to Browse</span>
+                </div>
+            </div>
+            <!-- ข้อมูลทีมผู้พัฒนา (Our Team) -->
+            <div class="about-team">
+                <h3>&#128101; Our Team</h3>
+                <div class="team-cards">
+                    <div class="team-card" id="team-card-1">
+                        <img src="https://hstd1.s3.kmitl.ac.th/kmitl-ifolio/students/cmsnileox01toqp0osjlz6b7s/avatar.png"
+                             alt="kithawor" class="team-avatar"
+                             onerror="this.src='https://placehold.co/80x80/6d28d9/fff?text=K'">
+                        <h4>kithawor</h4>
+                        <p>HTML &#8226; CSS &#8226; JS</p>
+                    </div>
+                    <div class="team-card" id="team-card-2">
+                        <img src="https://placehold.co/80x80/0891b2/fff?text=T" alt="Team Member 2" class="team-avatar">
+                        <h4>Teammate</h4>
+                        <p>HTML &#8226; CSS &#8226; JS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- FOOTER: ส่วนท้ายของหน้าเว็บ (แสดงลิขสิทธิ์และเทคโนโลยีที่ใช้)    -->
+    <!-- ======================================================== -->
+    <footer class="site-footer">
+        <p>&#127918; <strong>GameZone</strong> &#8212; Built with HTML, CSS and JavaScript</p>
+        <p class="footer-sub">&#169; 2025 GameZone. All rights reserved.</p>
+    </footer>
+
+    <!-- ======================================================== -->
+    <!-- DETAIL MODAL: หน้าต่างป๊อปอัปแสดงรายละเอียดเกมแบบเจาะลึก         -->
+    <!-- ถูกซ่อนไว้เป็นค่าเริ่มต้น (hidden) จะเด้งขึ้นมาเมื่อกดปุ่ม Details   -->
+    <!-- ======================================================== -->
+    <div id="detail-modal" class="modal hidden" role="dialog" aria-modal="true">
+        <!-- ฉากหลังสีดำโปร่งแสง (คลิกฉากหลังเพื่อปิด Modal ได้) -->
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <!-- กล่องเนื้อหาของป๊อปอัป -->
+        <div class="modal-box">
+            <!-- ปุ่มกากบาท (X) สำหรับปิดหน้าต่าง -->
+            <button class="modal-close" onclick="closeModal()" id="modal-close-btn" aria-label="Close">&#10005;</button>
+            <!-- องค์ประกอบต่างๆ ที่ JS จะนำข้อมูลจาก gameData มาใส่ -->
+            <img id="modal-img" src="" alt="" class="modal-img">
+            <div class="modal-body">
+                <div id="modal-genre" class="genre-tag"></div>
+                <h2 id="modal-title" class="modal-title"></h2>
+                <div id="modal-rating" class="star-rating"></div>
+                <p id="modal-desc" class="modal-desc"></p>
+                <div id="modal-tags" class="featured-tags"></div>
+                <div id="modal-meta" class="featured-meta"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ปุ่มลอยสำหรับกดเพื่อเลื่อนกลับขึ้นบนสุดของหน้าเว็บ (Scroll to Top) -->
+    <button id="scroll-top-btn" title="Back to top" aria-label="Scroll to top">&#8679;</button>
+
+    <!-- เชื่อมโยงไฟล์สคริปต์ JavaScript สำหรับควบคุมการทำงานและการโต้ตอบทั้งหมด -->
+    <script src="script.js"></script>
+</body>
+</html>
