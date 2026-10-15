@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's over 9000</title>
+    <link rel="stylesheet" href="calc.css">
+    <!-- เพิ่มไลบรารี jQuery ผ่าน CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- ช่องใส่ตัวเลขฝั่งซ้าย -->
+        <input type="text" id="left-member" placeholder="Left number">
+        
+        <!-- ช่องเลือกเครื่องหมาย -->
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        
+        <!-- ช่องใส่ตัวเลขฝั่งขวา -->
+        <input type="text" id="right-member" placeholder="Right number">
+        
+        <!-- ปุ่ม Try me! -->
+        <input type="submit" id="submit-btn" value="Try me!">
+    </div>
+
+    <!-- ดึงไฟล์ JavaScript มาทำงาน -->
+    <script src="calc.js"></script>
+</body>
+</html>
