@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- ส่วนหัวของเอกสาร HTML: กำหนดการเข้ารหัส, การแสดงผลบนมือถือ, SEO และไฟล์ CSS/Font -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="GameZone - Discover the best games across all genres. Browse top-rated RPGs, Action, and Strategy games.">
     <title>GameZone - Game Recommendations</title>
-    <!-- ลิงก์เชื่อมโยงไฟล์สไตล์ CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- ฟอนต์ภายนอก Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +14,6 @@
 
     <!-- ======================================================== -->
     <!-- แถบเมนูด้านบน (Sticky Navigation Bar)                      -->
-    <!-- ตรึงอยู่ด้านบนสุดตลอดเวลา เพื่อให้ผู้ใช้กดเลื่อนไปยังส่วนต่างๆ ได้สะดวก -->
     <!-- ======================================================== -->
     <nav id="navbar">
         <!-- โลโก้และชื่อเว็บไซต์ -->
@@ -29,10 +23,9 @@
         </div>
         <!-- รายการลิงก์เมนู (กดแล้วเลื่อนไปยัง Section ตาม ID ด้วย Smooth Scroll) -->
         <ul class="nav-links">
-            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#hero" class="nav-lin  k active">Home</a></li>
             <li><a href="#featured" class="nav-link">Featured</a></li>
             <li><a href="#games" class="nav-link">Games</a></li>
-            <li><a href="#quiz" class="nav-link">Find My Game</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
         </ul>
         <!-- ปุ่มสลับโหมดมืด / โหมดสว่าง (Dark / Light Mode) -->
@@ -48,7 +41,6 @@
             <li><a href="#hero" class="mobile-link">Home</a></li>
             <li><a href="#featured" class="mobile-link">Featured</a></li>
             <li><a href="#games" class="mobile-link">Games</a></li>
-            <li><a href="#quiz" class="mobile-link">Find My Game</a></li>
             <li><a href="#about" class="mobile-link">About</a></li>
         </ul>
     </div>
@@ -64,11 +56,6 @@
             <h1 class="hero-title">Discover Your<br><span class="gradient-text">Next Adventure</span></h1>
             <p class="hero-desc">Explore hand-picked game recommendations across RPG, Action, and Strategy genres. Find
                 your perfect game today.</p>
-            <!-- ปุ่ม Action ลัด: กดเพื่อเลื่อนลงไปดูเกม หรือไปเล่นควิซ -->
-            <div class="hero-buttons">
-                <a href="#games" class="btn-primary" id="explore-btn">Explore Games</a>
-                <a href="#quiz" class="btn-secondary" id="quiz-btn">Find My Game &#8594;</a>
-            </div>
         </div>
         <!-- ข้อความบอกใบ้ให้เลื่อนหน้าจอลงไปดูเนื้อหา -->
         <div class="hero-scroll-hint">&#9660; Scroll to explore</div>
@@ -132,16 +119,6 @@
             <span class="section-tag">&#127919; Browse All</span>
             <h2 class="section-title">Game Recommendations</h2>
             <p class="section-sub">Filter by genre to find your perfect match</p>
-        </div>
-
-        <!-- แถบปุ่มกรองแนวเกม (คลิกแล้ว JS จะกรองการ์ดเกมที่ตรงกับหมวดหมู่นั้นๆ) -->
-        <div class="filter-bar" id="filter-bar">
-            <button class="filter-btn active" data-filter="all" id="filter-all">All Games</button>
-            <button class="filter-btn" data-filter="rpg" id="filter-rpg">&#9876; RPG</button>
-            <button class="filter-btn" data-filter="action" id="filter-action">&#128165; Action</button>
-            <button class="filter-btn" data-filter="strategy" id="filter-strategy">&#129504; Strategy</button>
-            <button class="filter-btn" data-filter="adventure" id="filter-adventure">&#128506; Adventure</button>
-            <button class="filter-btn" data-filter="sandbox" id="filter-sandbox">&#127912; Sandbox</button>
         </div>
 
         <!-- พื้นที่แสดงการ์ดเกมทั้งหมด จัดด้วย CSS Grid -->
@@ -311,54 +288,12 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 4: FIND MY GAME QUIZ (มินิเกมค้นหาเกมที่เหมาะกับตัวคุณ)  -->
-    <!-- ส่วนตอบคำถามเชิงโต้ตอบ ให้ผู้ใช้ตอบเพื่อรับคำแนะนำเกมที่ตรงใจ     -->
-    <!-- ======================================================== -->
-    <section id="quiz" class="quiz-section">
-        <div class="section-header">
-            <span class="section-tag">&#10024; Interactive</span>
-            <h2 class="section-title">Find My Game</h2>
-            <p class="section-sub">Answer a few questions to get a personalized recommendation</p>
-        </div>
-        <div class="quiz-card" id="quiz-card">
-            <!-- หลอดแสดงความคืบหน้าของคำถาม (Progress Bar) -->
-            <div class="quiz-progress">
-                <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
-            </div>
-            <!-- กล่องแสดงคำถามและตัวเลือก (JS จะเปลี่ยนข้อความในนี้) -->
-            <div id="quiz-content">
-                <p class="quiz-question" id="quiz-question">What kind of experience do you enjoy most?</p>
-                <div class="quiz-options" id="quiz-options">
-                    <button class="quiz-opt" data-value="story" id="opt-story">&#128214; Deep storylines and
-                        characters</button>
-                    <button class="quiz-opt" data-value="action" id="opt-action">&#128165; Fast-paced action and
-                        combat</button>
-                    <button class="quiz-opt" data-value="think" id="opt-think">&#129504; Strategic thinking and
-                        planning</button>
-                    <button class="quiz-opt" data-value="explore" id="opt-explore">&#128506; Exploration and
-                        discovery</button>
-                </div>
-            </div>
-            <!-- กล่องแสดงผลลัพธ์เกมที่แนะนำ (ซ่อนไว้ก่อน และจะแสดงเมื่อตอบครบทุกข้อ) -->
-            <div id="quiz-result" class="quiz-result hidden">
-                <div class="result-icon" id="result-icon">&#127918;</div>
-                <h3 id="result-title">Your Game Match!</h3>
-                <p id="result-game" class="result-game-name"></p>
-                <p id="result-desc" class="result-desc-text"></p>
-                <!-- ปุ่มกดเริ่มตอบคำถามใหม่อีกครั้ง -->
-                <button id="quiz-restart" class="btn-primary" onclick="restartQuiz()">Try Again &#128260;</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======================================================== -->
     <!-- SECTION 5: ABOUT (เกี่ยวกับเราและทีมงาน)                      -->
     <!-- ข้อมูลเกี่ยวกับเว็บไซต์ ตัวเลขสถิติ และข้อมูลสมาชิกผู้พัฒนาเว็บ   -->
     <!-- ======================================================== -->
     <section id="about" class="about-section">
         <div class="about-container">
             <div class="section-header">
-                <span class="section-tag">&#128126; About Us</span>
                 <h2 class="section-title">About GameZone</h2>
             </div>
             <p class="about-text">
@@ -366,21 +301,6 @@
                 We help gamers discover incredible games across every genre from epic RPGs to thrilling action games
                 and mind-bending strategy titles.
             </p>
-            <!-- กล่องสถิติของเว็บไซต์ (Stats Cards) -->
-            <div class="about-stats">
-                <div class="stat-card">
-                    <span class="stat-number">8+</span>
-                    <span class="stat-label">Games Listed</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Genres</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Free to Browse</span>
-                </div>
-            </div>
             <!-- ข้อมูลทีมผู้พัฒนา (Our Team) -->
             <div class="about-team">
                 <h3>&#128101; Our Team</h3>

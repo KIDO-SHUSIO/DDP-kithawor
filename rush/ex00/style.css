@@ -1,11 +1,3 @@
-/* ==========================================================================
-   GAMEZONE STYLESHEET
-   ไฟล์กำหนดการแสดงผล ความสวยงาม ธีมสี (Dark/Light) และความ Responsive
-   ========================================================================== */
-
-/* ==========================================================================
-   1. VARIABLES: ตัวแปรสีและค่าคงที่ส่วนกลาง (สลับสีตามโหมดมืด/สว่าง)
-   ========================================================================== */
 :root {
     --bg: #1a1a2e;
     --bg2: #16213e;
@@ -18,7 +10,6 @@
     --nav-h: 64px;
 }
 
-/* ชุดสีสำหรับโหมดสว่าง (Light Mode) เมื่อ body มีคลาส .light-mode */
 body.light-mode {
     --bg: #f5f7fb;
     --bg2: #eef2ff;
@@ -29,17 +20,8 @@ body.light-mode {
     --border: #d9e1ee;
 }
 
-body.light-mode {
-    background-color: var(--bg);
-    color: var(--text);
-}
-
-/* ==========================================================================
-   2. RESET & BASE: ล้างค่าเริ่มต้นของเบราว์เซอร์ และตั้งค่าฟอนต์พื้นฐาน
-   ========================================================================== */
 * {
     box-sizing: border-box;
-    /* รวม padding และ border เข้าไปในขนาดของ element */
     margin: 0;
     padding: 0;
 }
@@ -50,13 +32,11 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--bg);
+    background: var(--bg);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    /* ป้องกันการเลื่อนหลุดออกข้างแนวนอน */
     transition: background-color 0.3s, color 0.3s;
-    /* สลับโหมดมืด/สว่างแบบสมูท */
 }
 
 a {
@@ -65,22 +45,23 @@ a {
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
-/* ==========================================================================
-   3. NAVBAR: แถบเมนูด้านบน (Sticky Header) ตรึงติดขอบบนตลอดเวลา
-   ========================================================================== */
+button {
+    font: inherit;
+}
+
+/* Layout and base sections */
 #navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--nav-h);
-    background-color: #0f0f1e;
-    border-bottom: 2px solid var(--red);
-    /* เส้นขอบล่างสีแดงเพิ่มความเด่น */
+    background: #0f0f1e;
+    border-bottom: 2px solid transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -88,86 +69,6 @@ img {
     z-index: 1000;
 }
 
-body.light-mode #navbar {
-    background-color: #f8fafc;
-    border-bottom-color: var(--red);
-    box-shadow: 0 2px 16px rgba(15, 23, 42, 0.08);
-}
-
-body.light-mode .mobile-menu,
-body.light-mode .site-footer {
-    background-color: #f8fafc;
-}
-
-body.light-mode .nav-link,
-body.light-mode .mobile-link,
-body.light-mode .nav-logo,
-body.light-mode .section-title,
-body.light-mode .hero-title,
-body.light-mode .featured-title,
-body.light-mode .card-title,
-body.light-mode .quiz-question,
-body.light-mode .team-card h4,
-body.light-mode .about-team h3,
-body.light-mode .modal-title {
-    color: var(--text);
-}
-
-body.light-mode .nav-link,
-body.light-mode .mobile-link,
-body.light-mode .hero-desc,
-body.light-mode .section-sub,
-body.light-mode .featured-desc,
-body.light-mode .card-desc,
-body.light-mode .about-text,
-body.light-mode .result-desc-text,
-body.light-mode .modal-desc,
-body.light-mode .team-card p,
-body.light-mode .footer-sub,
-body.light-mode .hero-scroll-hint {
-    color: var(--gray);
-}
-
-body.light-mode .hero-section,
-body.light-mode .featured-section,
-body.light-mode .games-section,
-body.light-mode .quiz-section,
-body.light-mode .about-section {
-    background-color: var(--bg);
-}
-
-body.light-mode .hero-section {
-    background: linear-gradient(180deg, #f3f6ff 0%, #eef2ff 100%);
-}
-
-body.light-mode .filter-btn,
-body.light-mode .btn-secondary,
-body.light-mode .quiz-opt,
-body.light-mode .modal-close,
-body.light-mode .close-menu,
-body.light-mode #dark-mode-btn,
-body.light-mode .nav-hamburger {
-    background-color: #ffffff;
-    color: var(--text);
-    border-color: var(--border);
-}
-
-body.light-mode .quiz-opt:hover,
-body.light-mode .filter-btn:hover,
-body.light-mode .nav-link:hover,
-body.light-mode .mobile-link:hover {
-    background-color: rgba(233, 69, 96, 0.08);
-    color: var(--red);
-}
-
-body.light-mode .card-genre-badge,
-body.light-mode .tag,
-body.light-mode .genre-tag {
-    background-color: rgba(233, 69, 96, 0.12);
-    border-color: rgba(233, 69, 96, 0.2);
-}
-
-/* โลโก้และชื่อเว็บ */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -177,13 +78,11 @@ body.light-mode .genre-tag {
     color: var(--red);
 }
 
-
 .nav-links {
     display: flex;
     list-style: none;
     gap: 4px;
 }
-
 
 .nav-link {
     padding: 8px 16px;
@@ -193,30 +92,27 @@ body.light-mode .genre-tag {
     transition: background-color 0.2s, color 0.2s;
 }
 
-
 .nav-link:hover,
 .nav-link.active {
     color: var(--red);
-    background-color: rgba(233, 69, 96, 0.1);
+    background: transparent;
+    border: 1px solid transparent;
 }
 
-
 #dark-mode-btn {
-    background-color: transparent;
-    border: 1px solid var(--border);
-    color: var(--text);
     width: 38px;
     height: 38px;
     border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
     cursor: pointer;
-    font-size: 1rem;
 }
 
 #dark-mode-btn:hover {
-    background-color: rgba(233, 69, 96, 0.15);
+    background: rgba(233, 69, 96, 0.15);
 }
 
-/* ปุ่ม 3 ขีด (Hamburger) สำหรับเปิดเมนูบนจอมือถือ (ซ่อนบนจอคอม) */
 .nav-hamburger {
     display: none;
     background: transparent;
@@ -227,25 +123,19 @@ body.light-mode .genre-tag {
     margin-left: 8px;
 }
 
-/* ==========================================================================
-   4. MOBILE MENU: เมนูด้านข้างสำหรับมือถือ (Drawer Menu)
-   ========================================================================== */
 .mobile-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    /* ซ่อนไว้นอกขอบจอด้านขวาเป็นค่าเริ่มต้น */
     width: 240px;
     height: 100vh;
-    background-color: #0f0f1e;
+    background: #0f0f1e;
     border-left: 1px solid var(--border);
     z-index: 2000;
     padding: 70px 20px 20px;
     transition: right 0.3s;
-    /* เอฟเฟกต์เลื่อนเข้า-ออก */
 }
 
-/* แสดงเมนูเมื่อมีคลาส .open */
 .mobile-menu.open {
     right: 0;
 }
@@ -262,66 +152,56 @@ body.light-mode .genre-tag {
     padding: 12px 16px;
     border-radius: 6px;
     color: var(--text);
-    transition: background-color 0.2s;
 }
 
 .mobile-link:hover {
-    background-color: rgba(233, 69, 96, 0.15);
+    background: rgba(233, 69, 96, 0.15);
     color: var(--red);
 }
 
-/* ปุ่มกากบาทปิดเมนูมือถือ */
 .close-menu {
     position: absolute;
     top: 18px;
     right: 18px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text);
     width: 34px;
     height: 34px;
     border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
     cursor: pointer;
 }
 
-/* ==========================================================================
-   5. SECTION HEADER: สไตล์หัวข้อส่วนกลางของแต่ละ Section
-   ========================================================================== */
 .section-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-/* ป้ายกำกับเล็กๆ ด้านบนหัวข้อ เช่น "Editor's Pick" */
 .section-tag {
     display: inline-block;
-    background-color: var(--red);
-    color: white;
-    font-size: 0.78rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    background: transparent;
+    color: var(--red);
+    border: 1px solid transparent;
     padding: 5px 14px;
     border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 12px;
 }
 
-/* หัวข้อหลักของ Section */
 .section-title {
     font-size: 2rem;
     font-weight: bold;
 }
 
-/* ข้อความอธิบายย่อยใต้หัวข้อ */
 .section-sub {
-    color: var(--gray);
     margin-top: 6px;
     font-size: 0.95rem;
+    color: var(--gray);
 }
 
-/* ==========================================================================
-   6. HERO SECTION: หน้าแรก/ส่วนต้อนรับขนาดเต็มหน้าจอ (Hero Banner)
-   ========================================================================== */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -330,12 +210,8 @@ body.light-mode .genre-tag {
     justify-content: center;
     text-align: center;
     padding: var(--nav-h) 24px 60px;
-    background-color: #0d0d1a;
+    background: #0d0d1a;
     position: relative;
-}
-
-body.light-mode .hero-section {
-    background-color: #1a1a2e;
 }
 
 .hero-content {
@@ -343,19 +219,19 @@ body.light-mode .hero-section {
 }
 
 .hero-tag {
+    margin-bottom: 14px;
     font-size: 0.85rem;
     font-weight: bold;
     color: var(--red);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 14px;
 }
 
 .hero-title {
+    margin-bottom: 18px;
     font-size: 3rem;
     font-weight: bold;
     line-height: 1.15;
-    margin-bottom: 18px;
 }
 
 .gradient-text {
@@ -363,20 +239,11 @@ body.light-mode .hero-section {
 }
 
 .hero-desc {
-    font-size: 1rem;
-    color: var(--gray);
     max-width: 500px;
     margin: 0 auto 30px;
+    color: var(--gray);
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* ข้อความแนะนำให้เลื่อนจอลงด้านล่าง */
 .hero-scroll-hint {
     position: absolute;
     bottom: 28px;
@@ -386,62 +253,19 @@ body.light-mode .hero-section {
     font-size: 0.8rem;
 }
 
-/* ==========================================================================
-   7. BUTTONS: สไตล์ปุ่มกดหลัก (Primary) และปุ่มกดรอง (Secondary)
-   ========================================================================== */
-/* ปุ่มหลัก (สีแดงทึบ) */
-.btn-primary {
-    display: inline-block;
-    background-color: var(--red);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.2s;
-}
-
-.btn-primary:hover {
-    background-color: #c73652;
-}
-
-/* ปุ่มรอง (กรอบโปร่งใส) */
-.btn-secondary {
-    display: inline-block;
-    background-color: transparent;
-    color: var(--text);
-    padding: 12px 28px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    border: 1px solid var(--border);
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.btn-secondary:hover {
-    background-color: rgba(233, 69, 96, 0.1);
-    border-color: var(--red);
-    color: var(--red);
-}
-
-/* ==========================================================================
-   8. FEATURED GAME: ส่วนเกมแนะนำพิเศษ (Elden Ring)
-   ========================================================================== */
-.featured-section {
+.featured-section,
+.games-section,
+.about-section {
     padding: 80px 32px;
-    background-color: var(--bg2);
 }
 
-/* การ์ดเกมเด่น จัดรูปและข้อความแบบแนวนอนด้วย Flexbox */
 .featured-card {
     display: flex;
     gap: 36px;
     align-items: flex-start;
     max-width: 1000px;
     margin: 0 auto;
-    background-color: var(--card);
+    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
@@ -458,12 +282,11 @@ body.light-mode .hero-section {
     object-fit: cover;
 }
 
-/* ป้ายรางวัลสีเหลืองทอง Game of the Year */
 .featured-badge {
     position: absolute;
     top: 12px;
     left: 12px;
-    background-color: #facc15;
+    background: #facc15;
     color: #1a1a00;
     font-size: 0.72rem;
     font-weight: bold;
@@ -473,8 +296,8 @@ body.light-mode .hero-section {
 }
 
 .featured-info {
-    padding: 28px 28px 28px 0;
     flex: 1;
+    padding: 28px 28px 28px 0;
 }
 
 .featured-title {
@@ -490,49 +313,38 @@ body.light-mode .hero-section {
     margin-bottom: 18px;
 }
 
-.featured-tags {
+.featured-tags,
+.featured-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 16px;
 }
 
 .featured-meta {
-    display: flex;
     gap: 16px;
-    flex-wrap: wrap;
     font-size: 0.82rem;
     color: var(--muted);
 }
 
-/* ==========================================================================
-   9. SHARED: ป้ายประเภท, แท็ก และดาวคะแนนรีวิว
-   ========================================================================== */
-/* ป้ายแนวเกม (เช่น Action RPG) */
-.genre-tag {
-    display: inline-block;
-    background-color: rgba(233, 69, 96, 0.15);
-    color: var(--red);
-    border: 1px solid rgba(233, 69, 96, 0.3);
-    font-size: 0.78rem;
-    font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-/* ป้ายแท็กคุณสมบัติ */
+.genre-tag,
 .tag {
-    background-color: rgba(233, 69, 96, 0.1);
+    display: inline-block;
+    background: transparent;
     color: var(--red);
-    border: 1px solid rgba(233, 69, 96, 0.25);
+    border: 1px solid transparent;
+    border-radius: 4px;
     font-size: 0.75rem;
     font-weight: bold;
     padding: 3px 10px;
-    border-radius: 4px;
 }
 
-/* คะแนนรีวิวรูปดาว */
+.genre-tag {
+    margin-bottom: 10px;
+    background: transparent;
+    border-color: transparent;
+    padding: 4px 12px;
+}
+
 .star-rating {
     display: flex;
     align-items: center;
@@ -546,57 +358,18 @@ body.light-mode .hero-section {
 }
 
 .rating-num {
+    background: rgba(250, 204, 21, 0.1);
+    color: #facc15;
     font-size: 0.88rem;
     font-weight: bold;
-    color: #facc15;
-    background-color: rgba(250, 204, 21, 0.1);
     padding: 2px 8px;
     border-radius: 4px;
 }
 
-/* ==========================================================================
-   10. GAMES SECTION: รายการเกมทั้งหมดและการ์ดเกม (CSS Grid)
-   ========================================================================== */
 .games-section {
-    padding: 80px 32px;
-    background-color: var(--bg);
+    background: var(--bg);
 }
 
-/* แถบปุ่ม Filter หมวดหมู่เกม */
-.filter-bar {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 36px;
-}
-
-.filter-btn {
-    padding: 9px 20px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background-color: transparent;
-    color: var(--gray);
-    font-family: Arial, sans-serif;
-    font-size: 0.88rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-}
-
-.filter-btn:hover {
-    border-color: var(--red);
-    color: var(--red);
-}
-
-/* ปุ่มที่ถูกเลือก (Active Filter) */
-.filter-btn.active {
-    background-color: var(--red);
-    border-color: var(--red);
-    color: white;
-}
-
-/* ตารางแสดงการ์ดเกม จัดด้วย CSS Grid แบบ Responsive อัตโนมัติ */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -605,24 +378,17 @@ body.light-mode .hero-section {
     margin: 0 auto;
 }
 
-/* กล่องการ์ดเกมแต่ละใบ */
 .game-card {
-    background-color: var(--card);
+    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: none;
 }
 
-/* เอฟเฟกต์ยกการ์ดขึ้นเล็กน้อยเมื่อ Hover */
 .game-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--red);
-}
-
-/* คลาสสำหรับซ่อนการ์ดเมื่อไม่ตรงกับ Filter */
-.game-card.hidden {
-    display: none;
+    border-color: var(--border);
+    transform: none;
 }
 
 .card-img-wrap {
@@ -635,12 +401,11 @@ body.light-mode .hero-section {
     object-fit: cover;
 }
 
-/* ป้ายบอกประเภทเกมที่มุมขวาบนของรูป */
 .card-genre-badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: rgba(13, 13, 30, 0.8);
+    background: rgba(13, 13, 30, 0.8);
     color: var(--red);
     font-size: 0.7rem;
     font-weight: bold;
@@ -667,7 +432,7 @@ body.light-mode .hero-section {
 }
 
 .card-rating span {
-    background-color: rgba(250, 204, 21, 0.1);
+    background: rgba(250, 204, 21, 0.1);
     padding: 1px 7px;
     border-radius: 4px;
     font-size: 0.78rem;
@@ -691,125 +456,24 @@ body.light-mode .hero-section {
     color: var(--muted);
 }
 
-/* ปุ่ม Details บนการ์ดเกม */
 .card-btn {
-    background-color: var(--red);
-    color: white;
-    border: none;
+    background: transparent;
+    color: var(--red);
+    border: 1px solid transparent;
     padding: 7px 16px;
     border-radius: 6px;
-    font-family: Arial, sans-serif;
-    font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .card-btn:hover {
-    background-color: #c73652;
-}
-
-/* ==========================================================================
-   11. QUIZ SECTION: มินิเกมค้นหาเกมที่ใช่ (Find My Game)
-   ========================================================================== */
-.quiz-section {
-    padding: 80px 32px;
-    background-color: var(--bg2);
-}
-
-.quiz-card {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 36px;
-}
-
-/* แถบหลอดความคืบหน้าของควิซ */
-.quiz-progress {
-    height: 6px;
-    background-color: var(--border);
-    border-radius: 4px;
-    margin-bottom: 28px;
-    overflow: hidden;
-}
-
-.quiz-progress-bar {
-    height: 100%;
-    width: 0%;
-    background-color: var(--red);
-    border-radius: 4px;
-    transition: width 0.4s;
-}
-
-.quiz-question {
-    font-size: 1.15rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-.quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* ปุ่มตัวเลือกคำตอบ */
-.quiz-opt {
-    background-color: transparent;
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 14px 18px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 0.92rem;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.quiz-opt:hover {
-    background-color: rgba(233, 69, 96, 0.15);
-    border-color: var(--red);
+    background: rgba(233, 69, 96, 0.08);
     color: var(--red);
 }
 
-/* กล่องแสดงผลลัพธ์เกมที่แนะนำ */
-.quiz-result {
-    text-align: center;
-}
-
-.quiz-result.hidden {
-    display: none;
-}
-
-.result-icon {
-    font-size: 3.5rem;
-    margin-bottom: 14px;
-}
-
-.result-game-name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--red);
-    margin-bottom: 10px;
-}
-
-.result-desc-text {
-    color: var(--gray);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-/* ==========================================================================
-   12. ABOUT SECTION: เกี่ยวกับเว็บไซต์ สถิติ และทีมผู้พัฒนา
-   ========================================================================== */
 .about-section {
-    padding: 80px 32px;
-    background-color: var(--bg);
+    background: var(--bg);
 }
 
 .about-container {
@@ -819,54 +483,12 @@ body.light-mode .hero-section {
 }
 
 .about-text {
-    color: var(--gray);
-    font-size: 1rem;
-    line-height: 1.75;
     max-width: 640px;
     margin: 0 auto 40px;
+    color: var(--gray);
+    line-height: 1.75;
 }
 
-/* กล่องแสดงตัวเลขสถิติของเว็บ */
-.about-stats {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-}
-
-.stat-card {
-    background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 24px 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    min-width: 130px;
-    transition: border-color 0.2s;
-}
-
-.stat-card:hover {
-    border-color: var(--red);
-}
-
-.stat-number {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--red);
-}
-
-.stat-label {
-    font-size: 0.82rem;
-    font-weight: bold;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-}
-
-/* ข้อมูลสมาชิกในทีมผู้พัฒนา */
 .about-team h3 {
     font-size: 1.3rem;
     font-weight: bold;
@@ -881,20 +503,20 @@ body.light-mode .hero-section {
 }
 
 .team-card {
-    background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 24px 28px;
+    min-width: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    min-width: 170px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
     transition: border-color 0.2s;
 }
 
 .team-card:hover {
-    border-color: var(--red);
+    border-color: var(--border);
 }
 
 .team-avatar {
@@ -902,7 +524,7 @@ body.light-mode .hero-section {
     height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--red);
+    border: none;
 }
 
 .team-card h4 {
@@ -915,11 +537,8 @@ body.light-mode .hero-section {
     color: var(--muted);
 }
 
-/* ==========================================================================
-   13. FOOTER: ส่วนท้ายของเว็บไซต์
-   ========================================================================== */
 .site-footer {
-    background-color: #0f0f1e;
+    background: #0f0f1e;
     border-top: 1px solid var(--border);
     text-align: center;
     padding: 28px 20px;
@@ -933,15 +552,10 @@ body.light-mode .hero-section {
     font-size: 0.78rem;
 }
 
-/* ==========================================================================
-   14. DETAIL MODAL: หน้าต่าง Popup แสดงรายละเอียดเกมแบบเจาะลึก
-   ========================================================================== */
 .modal {
     position: fixed;
     inset: 0;
-    /* top: 0, right: 0, bottom: 0, left: 0 */
     z-index: 3000;
-    /* อยู่บนสุดเหนือทุกสิ่ง */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -950,48 +564,42 @@ body.light-mode .hero-section {
 
 .modal.hidden {
     display: none;
-    /* ซ่อนเมื่อมีคลาส .hidden */
 }
 
-/* ฉากหลังสีดำโปร่งแสง */
 .modal-backdrop {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
-/* กล่องเนื้อหาป๊อปอัป */
 .modal-box {
     position: relative;
-    background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    max-width: 520px;
     width: 100%;
+    max-width: 520px;
     max-height: 90vh;
     overflow-y: auto;
-    /* ถ้าเนื้อหายาวจะมี Scrollbar ในกล่อง */
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
 }
 
-/* ปุ่มกากบาท (X) ปิด Modal */
 .modal-close {
     position: absolute;
     top: 12px;
     right: 12px;
-    background-color: rgba(233, 69, 96, 0.15);
-    border: 1px solid var(--border);
-    color: var(--text);
     width: 32px;
     height: 32px;
     border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text);
     cursor: pointer;
     z-index: 1;
-    transition: background-color 0.2s;
 }
 
 .modal-close:hover {
-    background-color: var(--red);
-    color: white;
+    background: rgba(233, 69, 96, 0.08);
+    color: var(--red);
 }
 
 .modal-img {
@@ -1018,30 +626,25 @@ body.light-mode .hero-section {
     margin-bottom: 16px;
 }
 
-/* ==========================================================================
-   15. SCROLL TO TOP: ปุ่มลอยมุมขวาล่างสำหรับกดเลื่อนกลับขึ้นบนสุด
-   ========================================================================== */
 #scroll-top-btn {
     position: fixed;
-    bottom: 28px;
     right: 28px;
+    bottom: 28px;
     width: 42px;
     height: 42px;
     border-radius: 6px;
-    background-color: var(--red);
-    color: white;
-    border: none;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
     font-size: 1.2rem;
     cursor: pointer;
     opacity: 0;
-    /* ซ่อนเป็นค่าเริ่มต้น */
     transform: translateY(20px);
     pointer-events: none;
     z-index: 900;
     transition: background-color 0.2s, opacity 0.3s, transform 0.3s;
 }
 
-/* แสดงปุ่มเมื่อมีคลาส .visible (JS จะใส่เมื่อ Scroll เกิน 400px) */
 #scroll-top-btn.visible {
     opacity: 1;
     transform: translateY(0);
@@ -1049,17 +652,12 @@ body.light-mode .hero-section {
 }
 
 #scroll-top-btn:hover {
-    background-color: #c73652;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* ==========================================================================
-   16. RESPONSIVE DESIGN: ปรับแต่งให้พอดีกับหน้าจอขนาดต่างๆ
-   ========================================================================== */
-/* หน้าจอขนาดกลาง / แท็บเล็ตแนวนอน (ไม่เกิน 900px) */
 @media (max-width: 900px) {
     .featured-card {
         flex-direction: column;
-        /* เปลี่ยนการ์ด Featured จากแนวนอนเป็นแนวตั้ง */
     }
 
     .featured-img-wrap {
@@ -1076,7 +674,6 @@ body.light-mode .hero-section {
     }
 }
 
-/* หน้าจอแท็บเล็ตแนวตั้งและมือถือ (ไม่เกิน 768px) */
 @media (max-width: 768px) {
     #navbar {
         padding: 0 18px;
@@ -1084,54 +681,31 @@ body.light-mode .hero-section {
 
     .nav-links {
         display: none;
-        /* ซ่อนเมนูแนวนอนเดิม */
     }
 
     .nav-hamburger {
         display: block;
-        /* แสดงปุ่ม 3 ขีด (Hamburger) */
     }
 
     .hero-title {
         font-size: 2.2rem;
-        /* ลดขนาดตัวอักษรหัวข้อลง */
     }
 
     .featured-section,
     .games-section,
-    .quiz-section,
     .about-section {
         padding: 60px 18px;
-        /* ลดระยะขอบ padding */
     }
 
     .games-grid {
         grid-template-columns: 1fr;
-        /* ให้การ์ดเกมเรียงเป็น 1 คอลัมน์เต็มจอ */
-    }
-
-    .quiz-card {
-        padding: 24px 18px;
     }
 }
 
-/* หน้าจอมือถือขนาดเล็ก (ไม่เกิน 480px) */
 @media (max-width: 480px) {
-    .hero-buttons {
-        flex-direction: column;
-        /* เรียงปุ่ม Action เป็นแนวตั้ง */
-        align-items: center;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        max-width: 260px;
-        text-align: center;
-    }
-
     .featured-meta {
         flex-direction: column;
         gap: 6px;
     }
 }
+
