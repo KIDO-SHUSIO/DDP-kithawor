@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- ส่วนหัวของเอกสาร HTML: กำหนดการเข้ารหัส, การแสดงผลบนมือถือ, SEO และไฟล์ CSS/Font -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GameZone - Discover the best games across all genres. Browse top-rated RPGs, Action, and Strategy games.">
+    <meta name="description"
+        content="GameZone - Discover the best games across all genres. Browse top-rated RPGs, Action, and Strategy games.">
     <title>GameZone - Game Recommendations</title>
     <!-- ลิงก์เชื่อมโยงไฟล์สไตล์ CSS -->
     <link rel="stylesheet" href="style.css">
@@ -12,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- ======================================================== -->
@@ -59,7 +62,8 @@
         <div class="hero-content">
             <p class="hero-tag">&#128379; Your Ultimate Game Guide</p>
             <h1 class="hero-title">Discover Your<br><span class="gradient-text">Next Adventure</span></h1>
-            <p class="hero-desc">Explore hand-picked game recommendations across RPG, Action, and Strategy genres. Find your perfect game today.</p>
+            <p class="hero-desc">Explore hand-picked game recommendations across RPG, Action, and Strategy genres. Find
+                your perfect game today.</p>
             <!-- ปุ่ม Action ลัด: กดเพื่อเลื่อนลงไปดูเกม หรือไปเล่นควิซ -->
             <div class="hero-buttons">
                 <a href="#games" class="btn-primary" id="explore-btn">Explore Games</a>
@@ -83,9 +87,8 @@
             <!-- ส่วนรูปภาพและป้ายรางวัล -->
             <div class="featured-img-wrap">
                 <img src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg"
-                     alt="Elden Ring - Featured Game"
-                     class="featured-img"
-                     onerror="this.src='https://placehold.co/600x350/1a1a2e/c084fc?text=Elden+Ring'">
+                    alt="Elden Ring - Featured Game" class="featured-img"
+                    onerror="this.src='https://placehold.co/600x350/1a1a2e/c084fc?text=Elden+Ring'">
                 <span class="featured-badge">Game of the Year</span>
             </div>
             <!-- ส่วนข้อมูลรายละเอียดของเกมเด่น -->
@@ -99,7 +102,9 @@
                 </div>
                 <!-- คำอธิบายเนื้อเรื่องย่อ -->
                 <p class="featured-desc">
-                    Developed by FromSoftware, Elden Ring is an epic open-world action RPG that delivers a vast, breathtaking world filled with mystery, danger, and unforgettable boss battles. Crafted in collaboration with George R.R. Martin.
+                    Developed by FromSoftware, Elden Ring is an epic open-world action RPG that delivers a vast,
+                    breathtaking world filled with mystery, danger, and unforgettable boss battles. Crafted in
+                    collaboration with George R.R. Martin.
                 </p>
                 <!-- ป้ายแท็กคุณสมบัติของเกม -->
                 <div class="featured-tags">
@@ -145,15 +150,16 @@
             <!-- การ์ดที่ 1: Elden Ring (แนว RPG) -->
             <div class="game-card" data-genre="rpg" id="card-elden-ring">
                 <div class="card-img-wrap">
-                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg"
-                         alt="Elden Ring" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/c084fc?text=Elden+Ring'">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg" alt="Elden Ring"
+                        class="card-img"
+                        onerror="this.src='https://placehold.co/400x220/1a1a2e/c084fc?text=Elden+Ring'">
                     <span class="card-genre-badge">RPG</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Elden Ring</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.6</span></div>
-                    <p class="card-desc">Vast open world, brutal combat, stunning dark fantasy lore by FromSoftware x George R.R. Martin.</p>
+                    <p class="card-desc">Vast open world, brutal combat, stunning dark fantasy lore by FromSoftware x
+                        George R.R. Martin.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Console</span>
                         <!-- ปุ่ม Details: กดแล้วเรียกฟังก์ชัน JS showDetail('elden-ring') เพื่อเปิดหน้าต่าง Popup Modal -->
@@ -165,15 +171,16 @@
             <!-- การ์ดที่ 2: Cyberpunk 2077 (แนว Action) -->
             <div class="game-card" data-genre="action" id="card-cyberpunk">
                 <div class="card-img-wrap">
-                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg"
-                         alt="Cyberpunk 2077" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/facc15?text=Cyberpunk+2077'">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk 2077"
+                        class="card-img"
+                        onerror="this.src='https://placehold.co/400x220/1a1a2e/facc15?text=Cyberpunk+2077'">
                     <span class="card-genre-badge">Action</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Cyberpunk 2077</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9734; <span>8.5</span></div>
-                    <p class="card-desc">Neon-lit Night City awaits in this open-world action RPG with deep story and stunning visuals.</p>
+                    <p class="card-desc">Neon-lit Night City awaits in this open-world action RPG with deep story and
+                        stunning visuals.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Console</span>
                         <button class="card-btn" id="btn-cyberpunk" onclick="showDetail('cyberpunk')">Details</button>
@@ -184,18 +191,20 @@
             <!-- การ์ดที่ 3: Civilization VI (แนว Strategy) -->
             <div class="game-card" data-genre="strategy" id="card-civilization">
                 <div class="card-img-wrap">
-                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/289070/header.jpg"
-                         alt="Civilization VI" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/22d3ee?text=Civilization+VI'">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/289070/header.jpg" alt="Civilization VI"
+                        class="card-img"
+                        onerror="this.src='https://placehold.co/400x220/1a1a2e/22d3ee?text=Civilization+VI'">
                     <span class="card-genre-badge">Strategy</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Civilization VI</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.2</span></div>
-                    <p class="card-desc">Build an empire to stand the test of time. The best turn-based strategy experience ever made.</p>
+                    <p class="card-desc">Build an empire to stand the test of time. The best turn-based strategy
+                        experience ever made.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Mobile</span>
-                        <button class="card-btn" id="btn-civilization" onclick="showDetail('civilization')">Details</button>
+                        <button class="card-btn" id="btn-civilization"
+                            onclick="showDetail('civilization')">Details</button>
                     </div>
                 </div>
             </div>
@@ -204,14 +213,15 @@
             <div class="game-card" data-genre="adventure" id="card-zelda">
                 <div class="card-img-wrap">
                     <img src="https://i0.wp.com/www.qualbert.com/wp-content/uploads/2023/06/Tears-of-the-Kingdom-wallpaper.jpg?fit=1280%2C720&ssl=1"
-                         alt="Zelda Tears of the Kingdom" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/4ade80?text=Zelda+TOTK'">
+                        alt="Zelda Tears of the Kingdom" class="card-img"
+                        onerror="this.src='https://placehold.co/400x220/1a1a2e/4ade80?text=Zelda+TOTK'">
                     <span class="card-genre-badge">Adventure</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Zelda: Tears of the Kingdom</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.8</span></div>
-                    <p class="card-desc">Explore the skies of Hyrule in a groundbreaking adventure with limitless creativity and discovery.</p>
+                    <p class="card-desc">Explore the skies of Hyrule in a groundbreaking adventure with limitless
+                        creativity and discovery.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#127918; Nintendo Switch</span>
                         <button class="card-btn" id="btn-zelda" onclick="showDetail('zelda')">Details</button>
@@ -222,15 +232,15 @@
             <!-- การ์ดที่ 5: Grand Theft Auto V (แนว Action) -->
             <div class="game-card" data-genre="action" id="card-gta5">
                 <div class="card-img-wrap">
-                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg"
-                         alt="GTA V" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/f97316?text=GTA+V'">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg" alt="GTA V"
+                        class="card-img" onerror="this.src='https://placehold.co/400x220/1a1a2e/f97316?text=GTA+V'">
                     <span class="card-genre-badge">Action</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Grand Theft Auto V</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.0</span></div>
-                    <p class="card-desc">An iconic open-world crime epic with an unmatched online multiplayer experience.</p>
+                    <p class="card-desc">An iconic open-world crime epic with an unmatched online multiplayer
+                        experience.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Console</span>
                         <button class="card-btn" id="btn-gta5" onclick="showDetail('gta5')">Details</button>
@@ -242,14 +252,15 @@
             <div class="game-card" data-genre="sandbox" id="card-roblox">
                 <div class="card-img-wrap">
                     <img src="https://static0.anpoimages.com/wordpress/wp-content/uploads/2026/01/robox-what-is-explainer-featured-image.jpg?w=1600&h=900&fit=crop"
-                         alt="Roblox" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/00d1b2?text=Roblox'">
+                        alt="Roblox" class="card-img"
+                        onerror="this.src='https://placehold.co/400x220/1a1a2e/00d1b2?text=Roblox'">
                     <span class="card-genre-badge">Sandbox</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Roblox</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.3</span></div>
-                    <p class="card-desc">Build, create, and play with millions of user-made games in a huge social sandbox world.</p>
+                    <p class="card-desc">Build, create, and play with millions of user-made games in a huge social
+                        sandbox world.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Mobile / Console</span>
                         <button class="card-btn" id="btn-roblox" onclick="showDetail('roblox')">Details</button>
@@ -261,14 +272,15 @@
             <div class="game-card" data-genre="sandbox" id="card-minecraft">
                 <div class="card-img-wrap">
                     <img src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
-                         alt="Minecraft" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/0f172a/8ac926?text=Minecraft'">
+                        alt="Minecraft" class="card-img"
+                        onerror="this.src='https://placehold.co/400x220/0f172a/8ac926?text=Minecraft'">
                     <span class="card-genre-badge">Sandbox</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Minecraft</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.7</span></div>
-                    <p class="card-desc">Mine, build, survive, and explore endless blocky worlds full of creativity and adventure.</p>
+                    <p class="card-desc">Mine, build, survive, and explore endless blocky worlds full of creativity and
+                        adventure.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Mobile / Console</span>
                         <button class="card-btn" id="btn-minecraft" onclick="showDetail('minecraft')">Details</button>
@@ -279,15 +291,15 @@
             <!-- การ์ดที่ 8: The Witcher 3: Wild Hunt (แนว RPG) -->
             <div class="game-card" data-genre="rpg" id="card-witcher">
                 <div class="card-img-wrap">
-                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg"
-                         alt="The Witcher 3" class="card-img"
-                         onerror="this.src='https://placehold.co/400x220/1a1a2e/a78bfa?text=Witcher+3'">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg" alt="The Witcher 3"
+                        class="card-img" onerror="this.src='https://placehold.co/400x220/1a1a2e/a78bfa?text=Witcher+3'">
                     <span class="card-genre-badge">RPG</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">The Witcher 3: Wild Hunt</h3>
                     <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.5</span></div>
-                    <p class="card-desc">The legendary open-world RPG with the richest storytelling and most memorable characters in gaming.</p>
+                    <p class="card-desc">The legendary open-world RPG with the richest storytelling and most memorable
+                        characters in gaming.</p>
                     <div class="card-footer">
                         <span class="card-platform">&#128187; PC / Console</span>
                         <button class="card-btn" id="btn-witcher3" onclick="showDetail('witcher3')">Details</button>
@@ -317,10 +329,14 @@
             <div id="quiz-content">
                 <p class="quiz-question" id="quiz-question">What kind of experience do you enjoy most?</p>
                 <div class="quiz-options" id="quiz-options">
-                    <button class="quiz-opt" data-value="story" id="opt-story">&#128214; Deep storylines and characters</button>
-                    <button class="quiz-opt" data-value="action" id="opt-action">&#128165; Fast-paced action and combat</button>
-                    <button class="quiz-opt" data-value="think" id="opt-think">&#129504; Strategic thinking and planning</button>
-                    <button class="quiz-opt" data-value="explore" id="opt-explore">&#128506; Exploration and discovery</button>
+                    <button class="quiz-opt" data-value="story" id="opt-story">&#128214; Deep storylines and
+                        characters</button>
+                    <button class="quiz-opt" data-value="action" id="opt-action">&#128165; Fast-paced action and
+                        combat</button>
+                    <button class="quiz-opt" data-value="think" id="opt-think">&#129504; Strategic thinking and
+                        planning</button>
+                    <button class="quiz-opt" data-value="explore" id="opt-explore">&#128506; Exploration and
+                        discovery</button>
                 </div>
             </div>
             <!-- กล่องแสดงผลลัพธ์เกมที่แนะนำ (ซ่อนไว้ก่อน และจะแสดงเมื่อตอบครบทุกข้อ) -->
@@ -371,13 +387,14 @@
                 <div class="team-cards">
                     <div class="team-card" id="team-card-1">
                         <img src="https://hstd1.s3.kmitl.ac.th/kmitl-ifolio/students/cmsnileox01toqp0osjlz6b7s/avatar.png"
-                             alt="kithawor" class="team-avatar"
-                             onerror="this.src='https://placehold.co/80x80/6d28d9/fff?text=K'">
+                            alt="kithawor" class="team-avatar"
+                            onerror="this.src='https://placehold.co/80x80/6d28d9/fff?text=K'">
                         <h4>kithawor</h4>
                         <p>HTML &#8226; CSS &#8226; JS</p>
                     </div>
                     <div class="team-card" id="team-card-2">
-                        <img src="https://media.discordapp.net/attachments/1556526372162113599/1560230786718769264/1783759260956.jpg?ex=6ad1f5a7&is=6ad0a427&hm=7b48fce46a1c70edc56b17b4db3886315ef80f7a64684644466d7f1913969322&=&format=webp&width=1536&height=2048" alt="Team Member 2" class="team-avatar">
+                        <img src="https://media.discordapp.net/attachments/1556526372162113599/1560230786718769264/1783759260956.jpg?ex=6ad1f5a7&is=6ad0a427&hm=7b48fce46a1c70edc56b17b4db3886315ef80f7a64684644466d7f1913969322&=&format=webp&width=1536&height=2048"
+                            alt="Team Member 2" class="team-avatar">
                         <h4>blinrhon</h4>
                         <p>CSS &#8226; Design</p>
                     </div>
@@ -424,4 +441,8 @@
     <!-- เชื่อมโยงไฟล์สคริปต์ JavaScript สำหรับควบคุมการทำงานและการโต้ตอบทั้งหมด -->
     <script src="script.js"></script>
 </body>
+
 </html>
+
+
+/*test*/
