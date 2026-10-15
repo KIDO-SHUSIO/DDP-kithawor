@@ -34,7 +34,7 @@ const gameData = {
         title: 'Zelda: Tears of the Kingdom',
         genre: 'Action Adventure',
         rating: '&#9733;&#9733;&#9733;&#9733;&#9733; 9.8 / 10',
-        img: 'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_400/v1/ncom/software/switch/70010000063714/c04f36ff20c6d51b34bf7a7a86b0ab0a0e9a11bc76a638b6a3d1e6e6408baae0',
+        img: 'https://i0.wp.com/www.qualbert.com/wp-content/uploads/2023/06/Tears-of-the-Kingdom-wallpaper.jpg?fit=1280%2C720&ssl=1',
         desc: 'The Legend of Zelda: Tears of the Kingdom expands on Breath of the Wild with a breathtaking sky world above Hyrule. New Ultrahand and Fuse abilities allow incredible creativity in puzzle solving and combat, making it one of the most innovative games ever created.',
         tags: ['Open World', 'Adventure', 'Puzzle', 'Nintendo', 'Creative'],
         meta: '&#128197; 2023 &nbsp;|&nbsp; &#127970; Nintendo &nbsp;|&nbsp; &#127918; Nintendo Switch'
@@ -47,6 +47,24 @@ const gameData = {
         desc: 'Grand Theft Auto V is Rockstar Games masterpiece set in the sprawling city of Los Santos. Play as three distinct protagonists across an interconnected story of crime, ambition, and betrayal. GTA Online continues to evolve with new content years after release.',
         tags: ['Open World', 'Crime', 'Online', 'Action', 'Sandbox'],
         meta: '&#128197; 2013 &nbsp;|&nbsp; &#127970; Rockstar Games &nbsp;|&nbsp; &#128187; PC / PS5 / Xbox'
+    },
+    'roblox': {
+        title: 'Roblox',
+        genre: 'Sandbox',
+        rating: '&#9733;&#9733;&#9733;&#9733;&#9733; 9.3 / 10',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEnshWbFxBo3GRtE2y3bPyPvWumgPR2wkk5-IPemNLpXVwOuxksFQ6j2kJ&s=10',
+        desc: 'Roblox is a social sandbox platform where players can create, explore, and play millions of user-generated experiences. From obby challenges and tycoon games to role-playing worlds, it offers endless creativity and community interaction for every age.',
+        tags: ['Creative', 'Multiplayer', 'Building', 'Social', 'Adventure'],
+        meta: '&#128197; 2006 &nbsp;|&nbsp; &#127970; Roblox Corporation &nbsp;|&nbsp; &#128187; PC / Mobile / Console'
+    },
+    'minecraft': {
+        title: 'Minecraft',
+        genre: 'Sandbox',
+        rating: '&#9733;&#9733;&#9733;&#9733;&#9733; 9.7 / 10',
+        img: 'https://assets.xboxservices.com/assets/0e/f8/0ef8df5c-a7dd-4eb3-b11a-743058d93953.jpg?n=Minecraft_GLP-Page-Hero-1084_Titan-Update_1920x1080_01.jpg',
+        desc: 'Minecraft is the ultimate sandbox game where creativity meets survival. Mine resources, build structures, craft tools, and brave monsters in a blocky world that can be shaped by your imagination. It is endlessly replayable and beloved worldwide.',
+        tags: ['Creative', 'Survival', 'Building', 'Adventure', 'Popular'],
+        meta: '&#128197; 2011 &nbsp;|&nbsp; &#127970; Mojang &nbsp;|&nbsp; &#128187; PC / Mobile / Console'
     },
     'witcher3': {
         title: 'The Witcher 3: Wild Hunt',

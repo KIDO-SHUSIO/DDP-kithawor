@@ -20,13 +20,18 @@
 
 /* ชุดสีสำหรับโหมดสว่าง (Light Mode) เมื่อ body มีคลาส .light-mode */
 body.light-mode {
-    --bg: #f8fafc;       /* สีพื้นหลังสว่าง โทนสะอาดตา */
-    --bg2: #f1f5f9;      /* สีพื้นหลังส่วนย่อยสว่าง */
-    --card: #ffffff;     /* การ์ดสีขาว */
-    --text: #0f172a;     /* ตัวอักษรสีเข้ม คมชัด อ่านง่าย */
-    --gray: #475569;     /* ตัวอักษรรองสีเทา */
-    --muted: #94a3b8;    /* ตัวอักษรจาง */
-    --border: #e2e8f0;   /* ขอบสีเทาอ่อน */
+    --bg: #f5f7fb;
+    --bg2: #eef2ff;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --gray: #4b5563;
+    --muted: #6b7280;
+    --border: #d9e1ee;
+}
+
+body.light-mode {
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* ==========================================================================
@@ -84,8 +89,82 @@ img {
 }
 
 body.light-mode #navbar {
+    background-color: #f8fafc;
+    border-bottom-color: var(--red);
+    box-shadow: 0 2px 16px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .mobile-menu,
+body.light-mode .site-footer {
+    background-color: #f8fafc;
+}
+
+body.light-mode .nav-link,
+body.light-mode .mobile-link,
+body.light-mode .nav-logo,
+body.light-mode .section-title,
+body.light-mode .hero-title,
+body.light-mode .featured-title,
+body.light-mode .card-title,
+body.light-mode .quiz-question,
+body.light-mode .team-card h4,
+body.light-mode .about-team h3,
+body.light-mode .modal-title {
+    color: var(--text);
+}
+
+body.light-mode .nav-link,
+body.light-mode .mobile-link,
+body.light-mode .hero-desc,
+body.light-mode .section-sub,
+body.light-mode .featured-desc,
+body.light-mode .card-desc,
+body.light-mode .about-text,
+body.light-mode .result-desc-text,
+body.light-mode .modal-desc,
+body.light-mode .team-card p,
+body.light-mode .footer-sub,
+body.light-mode .hero-scroll-hint {
+    color: var(--gray);
+}
+
+body.light-mode .hero-section,
+body.light-mode .featured-section,
+body.light-mode .games-section,
+body.light-mode .quiz-section,
+body.light-mode .about-section {
+    background-color: var(--bg);
+}
+
+body.light-mode .hero-section {
+    background: linear-gradient(180deg, #f3f6ff 0%, #eef2ff 100%);
+}
+
+body.light-mode .filter-btn,
+body.light-mode .btn-secondary,
+body.light-mode .quiz-opt,
+body.light-mode .modal-close,
+body.light-mode .close-menu,
+body.light-mode #dark-mode-btn,
+body.light-mode .nav-hamburger {
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.light-mode .quiz-opt:hover,
+body.light-mode .filter-btn:hover,
+body.light-mode .nav-link:hover,
+body.light-mode .mobile-link:hover {
+    background-color: rgba(233, 69, 96, 0.08);
+    color: var(--red);
+}
+
+body.light-mode .card-genre-badge,
+body.light-mode .tag,
+body.light-mode .genre-tag {
+    background-color: rgba(233, 69, 96, 0.12);
+    border-color: rgba(233, 69, 96, 0.2);
 }
 
 /* โลโก้และชื่อเว็บ */
@@ -169,10 +248,6 @@ body.light-mode #navbar {
 /* แสดงเมนูเมื่อมีคลาส .open */
 .mobile-menu.open {
     right: 0;
-}
-
-body.light-mode .mobile-menu {
-    background-color: #ffffff;
 }
 
 .mobile-menu ul {
@@ -260,7 +335,7 @@ body.light-mode .mobile-menu {
 }
 
 body.light-mode .hero-section {
-    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    background-color: #1a1a2e;
 }
 
 .hero-content {
@@ -574,12 +649,6 @@ body.light-mode .hero-section {
     text-transform: uppercase;
 }
 
-body.light-mode .card-genre-badge {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
 .card-body {
     padding: 16px;
 }
@@ -856,20 +925,6 @@ body.light-mode .card-genre-badge {
     padding: 28px 20px;
     color: var(--gray);
     font-size: 0.88rem;
-}
-
-body.light-mode .site-footer {
-    background-color: #f1f5f9;
-}
-
-/* เงาของการ์ดในโหมดสว่าง เพื่อให้กล่องสีขาวลอยเด่นขึ้นมาจากพื้นหลัง */
-body.light-mode .game-card,
-body.light-mode .featured-card,
-body.light-mode .quiz-card,
-body.light-mode .stat-card,
-body.light-mode .team-card,
-body.light-mode .modal-box {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .footer-sub {

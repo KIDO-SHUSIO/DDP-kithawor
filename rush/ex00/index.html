@@ -136,6 +136,7 @@
             <button class="filter-btn" data-filter="action" id="filter-action">&#128165; Action</button>
             <button class="filter-btn" data-filter="strategy" id="filter-strategy">&#129504; Strategy</button>
             <button class="filter-btn" data-filter="adventure" id="filter-adventure">&#128506; Adventure</button>
+            <button class="filter-btn" data-filter="sandbox" id="filter-sandbox">&#127912; Sandbox</button>
         </div>
 
         <!-- พื้นที่แสดงการ์ดเกมทั้งหมด จัดด้วย CSS Grid -->
@@ -202,7 +203,7 @@
             <!-- การ์ดที่ 4: Zelda: Tears of the Kingdom (แนว Adventure) -->
             <div class="game-card" data-genre="adventure" id="card-zelda">
                 <div class="card-img-wrap">
-                    <img src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_400/v1/ncom/software/switch/70010000063714/c04f36ff20c6d51b34bf7a7a86b0ab0a0e9a11bc76a638b6a3d1e6e6408baae0"
+                    <img src="https://i0.wp.com/www.qualbert.com/wp-content/uploads/2023/06/Tears-of-the-Kingdom-wallpaper.jpg?fit=1280%2C720&ssl=1"
                          alt="Zelda Tears of the Kingdom" class="card-img"
                          onerror="this.src='https://placehold.co/400x220/1a1a2e/4ade80?text=Zelda+TOTK'">
                     <span class="card-genre-badge">Adventure</span>
@@ -237,7 +238,45 @@
                 </div>
             </div>
 
-            <!-- การ์ดที่ 6: The Witcher 3: Wild Hunt (แนว RPG) -->
+            <!-- การ์ดที่ 6: Roblox (แนว Sandbox) -->
+            <div class="game-card" data-genre="sandbox" id="card-roblox">
+                <div class="card-img-wrap">
+                    <img src="https://static0.anpoimages.com/wordpress/wp-content/uploads/2026/01/robox-what-is-explainer-featured-image.jpg?w=1600&h=900&fit=crop"
+                         alt="Roblox" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/1a1a2e/00d1b2?text=Roblox'">
+                    <span class="card-genre-badge">Sandbox</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Roblox</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.3</span></div>
+                    <p class="card-desc">Build, create, and play with millions of user-made games in a huge social sandbox world.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Mobile / Console</span>
+                        <button class="card-btn" id="btn-roblox" onclick="showDetail('roblox')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 7: Minecraft (แนว Sandbox) -->
+            <div class="game-card" data-genre="sandbox" id="card-minecraft">
+                <div class="card-img-wrap">
+                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                         alt="Minecraft" class="card-img"
+                         onerror="this.src='https://placehold.co/400x220/0f172a/8ac926?text=Minecraft'">
+                    <span class="card-genre-badge">Sandbox</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Minecraft</h3>
+                    <div class="card-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>9.7</span></div>
+                    <p class="card-desc">Mine, build, survive, and explore endless blocky worlds full of creativity and adventure.</p>
+                    <div class="card-footer">
+                        <span class="card-platform">&#128187; PC / Mobile / Console</span>
+                        <button class="card-btn" id="btn-minecraft" onclick="showDetail('minecraft')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 8: The Witcher 3: Wild Hunt (แนว RPG) -->
             <div class="game-card" data-genre="rpg" id="card-witcher">
                 <div class="card-img-wrap">
                     <img src="https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg"
@@ -314,11 +353,11 @@
             <!-- กล่องสถิติของเว็บไซต์ (Stats Cards) -->
             <div class="about-stats">
                 <div class="stat-card">
-                    <span class="stat-number">6+</span>
+                    <span class="stat-number">8+</span>
                     <span class="stat-label">Games Listed</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">4</span>
+                    <span class="stat-number">5</span>
                     <span class="stat-label">Genres</span>
                 </div>
                 <div class="stat-card">
@@ -338,9 +377,9 @@
                         <p>HTML &#8226; CSS &#8226; JS</p>
                     </div>
                     <div class="team-card" id="team-card-2">
-                        <img src="https://placehold.co/80x80/0891b2/fff?text=T" alt="Team Member 2" class="team-avatar">
-                        <h4>Teammate</h4>
-                        <p>HTML &#8226; CSS &#8226; JS</p>
+                        <img src="https://media.discordapp.net/attachments/1556526372162113599/1560230786718769264/1783759260956.jpg?ex=6ad1f5a7&is=6ad0a427&hm=7b48fce46a1c70edc56b17b4db3886315ef80f7a64684644466d7f1913969322&=&format=webp&width=1536&height=2048" alt="Team Member 2" class="team-avatar">
+                        <h4>blinrhon</h4>
+                        <p>CSS &#8226; Design</p>
                     </div>
                 </div>
             </div>
