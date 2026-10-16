@@ -1,0 +1,822 @@
+:root {
+    /*ฟังชันกำหนดสี*/
+    --bg: #1a1a2e;
+    --bg2: #16213e;
+    --card: #0f3460;
+    --red: #e94560;
+    --text: #eaeaea;
+    --gray: #a8a8b3;
+    --muted: #6c6c80;
+    --border: #2a2a4a;
+    --nav-h: 64px;
+    /* ความสูงของ Navbar */
+}
+
+/*LIGHT MODE OVERRIDES*/
+body.light-mode {
+    --bg: #f5f7fb;
+    --bg2: #eef2ff;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --gray: #4b5563;
+    --muted: #6b7280;
+    --border: #d9e1ee;
+}
+
+/* ============================================================
+   CSS RESET
+   รีเซ็ตค่าเริ่มต้นของทุก element ให้เหมือนกันในทุก browser
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*เลื่อนลงแบบนุ่มนวล*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================================
+   BODY — ตั้งค่าพื้นฐานของเนื้อหาทั้งหน้า
+   overflow-x: hidden — ซ่อน scroll bar แนวนอน
+   ============================================================ */
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/*ลบเส้นใต้ของlinkและให้สีตามตัวแปร*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ทำให้รูปภาพไม่เกินกรอบ ไม่มีช่องว่างใต้ภาพ */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/*ทำให้ปุ่มใช้ฟอนต์เดียวกับ parent*/
+button {
+    font: inherit;
+}
+
+/* ============================================================
+   NAVBAR (#navbar)
+   แถบนำทางด้านบนที่ติดอยู่กับจอตลอดเวลา
+   position: fixed — ลอยอยู่บนสุดไม่เลื่อนตามหน้า
+   z-index: 1000 — วางอยู่เหนือ element อื่นๆ
+   ============================================================ */
+#navbar {
+    position: fixed;
+    width: 100%;
+    height: var(--nav-h);
+    background: #0f0f1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* โลโก้ใน Navbar — จัดแนวตรงกลาง แสดงสีแดง */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    color: var(--red);
+}
+
+/*  Navbar — จัดเรียงแนวนอน */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+}
+
+/* แต่ละ link ใน Navbar */
+.nav-link {
+    padding: 8px 16px;
+    /* border-radius: 6px; */
+    font-size: 16px;
+    color: var(--gray);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+
+/* ============================================================
+   DARK MODE BUTTON (#dark-mode-btn)
+   ปุ่มสลับ dark/light mode มุมขวาของ Navbar
+   เมื่อ hover แสดงพื้นหลังโปร่งแสงสีแดง
+   ============================================================ */
+#dark-mode-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+#dark-mode-btn:hover {
+    background: rgba(233, 69, 96, 0.15);
+}
+
+/* ============================================================
+   HAMBURGER BUTTON (.nav-hamburger)
+   ปุ่ม ☰ สำหรับมือถือ — ซ่อนอยู่ในจอใหญ่ (display: none)
+   จะแสดงเมื่อหน้าจอเล็กลง (ดูใน @media)
+   ============================================================ */
+.nav-hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* ============================================================
+   MOBILE MENU (.mobile-menu)
+   ============================================================ */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 240px;
+    height: 100vh;
+    background: #0f0f1e;
+    border-left: 1px solid var(--border);
+    z-index: 2000;
+    /* อยู่เหนือ Navbar */
+    padding: 70px 20px 20px;
+    transition: right 0.3s;
+    /* เลื่อนเข้า/ออกแบบ smooth */
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+/* รายการ link ใน mobile menu — เรียงแนวตั้ง */
+.mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mobile-link {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: var(--text);
+}
+
+.mobile-link:hover {
+    background: rgba(233, 69, 96, 0.15);
+    color: var(--red);
+}
+
+/* ปุ่มปิดเมนูมือถือ (✕) อยู่มุมบนขวาของเมนู */
+.close-menu {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* ============================================================
+   SECTION HEADERS — หัวข้อกลางหน้าของแต่ละ section
+   ============================================================ */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ป้ายเล็กเหนือหัวข้อ เช่น "FEATURED" */
+.section-tag {
+    display: inline-block;
+    background: transparent;
+    color: var(--red);
+    border: 1px solid transparent;
+    padding: 5px 14px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* ตัวพิมพ์ใหญ่ทั้งหมด */
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* ชื่อหัวข้อหลักของ section */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* คำอธิบายใต้หัวข้อ section */
+.section-sub {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+
+/* ============================================================
+   HERO SECTION (.hero-section)
+   หน้าแรกที่เห็นทันทีเมื่อเปิดเว็บ
+
+   ============================================================ */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* จัดเนื้อหากลางจอทั้งแนวตั้งและแนวนอน */
+    text-align: center;
+    padding: var(--nav-h) 24px 60px;
+    /* padding-top เท่ากับความสูง navbar */
+    background: #0d0d1a;
+    position: relative;
+}
+
+/* กรอบเนื้อหาใน Hero จำกัดความกว้าง */
+.hero-content {
+    max-width: 660px;
+}
+
+/* คำอธิบายด้านบน discover*/
+.hero-tag {
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* หัวข้อหลักขนาดใหญ่ใน (DISCOVER) */
+.hero-title {
+    margin-bottom: 18px;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.15;
+}
+/* เน้นแดง */
+.gradient-text {
+    color: var(--red);
+}
+
+/* คำอธิบายใต้หัวข้อ (Adventure) */
+.hero-desc {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    color: var(--gray);
+}
+
+/* ข้อความ "เลื่อนลง" จัดกึ่งกลางแนวนอน */
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* กำหนด padding เท่ากันให้ทุก section หลัก */
+.featured-section,
+.games-section,
+.about-section {
+    padding: 80px 32px;
+}
+
+/* ============================================================
+   FEATURED CARD (.featured-card)
+   การ์ดเกมแนะนำขนาดใหญ่ — แสดงรูปและข้อมูลเคียงกัน (flex row)
+   overflow: hidden — ซ่อนส่วนที่เกินขอบโค้ง
+   ============================================================ */
+.featured-card {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* กรอบรูปภาพของ featured card — ความกว้างคงที่ 400px ไม่ยืดหด */
+.featured-img-wrap {
+    position: relative;
+    flex: 0 0 400px;
+}
+
+/* รูปภาพ — object-fit: cover ครอบรูปให้พอดีโดยไม่บิดเบี้ยว */
+.featured-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* ป้าย "TOP PICK" บนรูปภาพ — position: absolute วางซ้อนบนรูป */
+.featured-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #facc15;
+    color: #1a1a00;
+    font-size: 0.72rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* ส่วนข้อมูลทางขวา — flex: 1 ยืดเต็มพื้นที่ที่เหลือ */
+.featured-info {
+    flex: 1;
+    padding: 28px 28px 28px 0;
+}
+
+/* ชื่อเกมใน featured card */
+.featured-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* คำอธิบายเกม */
+.featured-desc {
+    color: var(--gray);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+}
+
+/* กรอบ tag และ meta — จัดเรียงแนวนอน และ wrap ขึ้นบรรทัดใหม่ได้ */
+.featured-tags,
+.featured-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* ข้อมูล meta เช่น ปีที่วาง, platform */
+.featured-meta {
+    gap: 16px;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+/* ============================================================
+   TAG / GENRE BADGE — ป้ายประเภทเกม เช่น "RPG", "Action"
+   ============================================================ */
+.genre-tag,
+.tag {
+    display: inline-block;
+    background: transparent;
+    color: var(--red);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+}
+
+.genre-tag {
+    margin-bottom: 10px;
+    background: transparent;
+    border-color: transparent;
+    padding: 4px 12px;
+}
+
+/* ============================================================
+   STAR RATING — แสดงดาวและคะแนนของเกม
+   ============================================================ */
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+/* ดาวสีเหลือง */
+.stars {
+    color: #facc15;
+    font-size: 1rem;
+}
+
+/* กล่องตัวเลขคะแนน — พื้นหลังเหลืองโปร่งแสง */
+.rating-num {
+    background: rgba(250, 204, 21, 0.1);
+    color: #facc15;
+    font-size: 0.88rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* GAMES SECTION */
+.games-section {
+    background: var(--bg);
+}
+
+/* ============================================================
+   GAMES GRID (.games-grid)
+   ตาราง Grid สำหรับเรียงการ์ดเกม
+   auto-fill + minmax(290px, 1fr) — จัดคอลัมน์อัตโนมัติ
+   ถ้าพื้นที่พอจะเพิ่มคอลัมน์, ถ้าไม่พอจะลดเหลือ 1 คอลัมน์
+   ============================================================ */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 22px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   GAME CARD (.game-card) — การ์ดแสดงข้อมูลเกมแต่ละชื่อ
+   ============================================================ */
+.game-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: none;
+}
+
+/* hover ของ game card (ปัจจุบันไม่มีเอฟเฟกต์) */
+.game-card:hover {
+    border-color: var(--border);
+    transform: none;
+}
+
+/* กรอบรูปภาพของการ์ดเกม */
+.card-img-wrap {
+    position: relative;
+}
+
+/* รูปภาพของการ์ดเกม */
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* ป้ายประเภทเกมบนรูปภาพ (มุมขวาบน) — พื้นหลังโปร่งแสงสีเข้ม */
+.card-genre-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(13, 13, 30, 0.8);
+    color: var(--red);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* เนื้อหาข้อมูลในการ์ดเกม */
+.card-body {
+    padding: 16px;
+}
+
+/* ชื่อเกมในการ์ด */
+.card-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* คะแนนดาวในการ์ดเกม */
+.card-rating {
+    color: #facc15;
+    font-size: 0.82rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* กล่องตัวเลขคะแนนในการ์ด */
+.card-rating span {
+    background: rgba(250, 204, 21, 0.1);
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+}
+
+/* คำอธิบายสั้นในการ์ดเกม */
+.card-desc {
+    color: var(--gray);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+/* ส่วนล่างสุดของการ์ด — แสดง platform และปุ่ม */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ข้อความ platform เช่น PC, PS5 */
+.card-platform {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* ปุ่มในการ์ดเกม */
+.card-btn {
+    background: transparent;
+    color: var(--red);
+    border: 1px solid transparent;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+
+
+/* ============================================================
+   ABOUT SECTION (.about-section) — Section แนะนำทีมงาน
+   ============================================================ */
+.about-section {
+    background: var(--bg);
+}
+
+/* กรอบเนื้อหา About — จัดกึ่งกลาง */
+.about-container {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ข้อความแนะนำเว็บไซต์ */
+.about-text {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    color: var(--gray);
+    line-height: 1.75;
+}
+
+/* หัวข้อหมวดทีมงาน */
+.about-team h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* กรอบจัดเรียงการ์ดทีมงานแนวนอน — flex-wrap ขึ้นบรรทัดใหม่ได้ */
+.team-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* การ์ดสมาชิกทีม */
+.team-card {
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    transition: border-color 0.2s;
+}
+
+/* hover ของการ์ดทีม */
+.team-card:hover {
+    border-color: var(--border);
+}
+
+/* รูปโปรไฟล์สมาชิก — border-radius: 50% ทำให้รูปเป็นวงกลม */
+.team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+}
+
+/* ชื่อสมาชิก */
+.team-card h4 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* ตำแหน่ง/บทบาทสมาชิก */
+.team-card p {
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+/* ============================================================
+   FOOTER (.site-footer) — ส่วนท้ายของเว็บไซต์
+   ============================================================ */
+.site-footer {
+    background: #0f0f1e;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 28px 20px;
+    color: var(--gray);
+    font-size: 0.88rem;
+}
+
+/* ข้อความเล็กใต้ footer */
+.footer-sub {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+/* ============================================================
+   MODAL (.modal) — หน้าต่าง popup แสดงรายละเอียดเกม
+   position: fixed + inset: 0 — คลุมทั้งหน้าจอ
+   z-index: 3000 — อยู่บนสุดเหนือทุก element
+   ============================================================ */
+.modal {
+    position: fixed;
+    inset: 0;
+    /* top/right/bottom/left: 0 ทั้งหมด */
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ซ่อน modal เมื่อมี class "hidden" */
+.modal.hidden {
+    display: none;
+}
+
+/* พื้นหลังโปร่งแสงสีดำด้านหลัง modal */
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* กล่อง modal หลัก — overflow-y: auto เลื่อนได้ถ้าเนื้อหายาวเกิน */
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* ปุ่มปิด modal (✕) */
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* hover ของปุ่มปิด modal */
+.modal-close:hover {
+    background: rgba(233, 69, 96, 0.08);
+    color: var(--red);
+}
+
+/* รูปภาพด้านบน modal — โค้งเฉพาะมุมบน */
+.modal-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* เนื้อหาข้อมูลใน modal */
+.modal-body {
+    padding: 24px;
+}
+
+/* ชื่อเกมใน modal */
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 8px 0 10px;
+}
+
+/* คำอธิบายเกมใน modal */
+.modal-desc {
+    color: var(--gray);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+/* ============================================================
+   RESPONSIVE: จอกว้างไม่เกิน 900px (แท็บเล็ต)
+   featured card เปลี่ยนจากแนวนอน → แนวตั้ง
+   ============================================================ */
+@media (max-width: 900px) {
+    .featured-card {
+        flex-direction: column;
+        /* เรียงแนวตั้ง */
+    }
+
+    .featured-img-wrap {
+        flex: none;
+        max-width: 100%;
+        /* รูปยืดเต็มความกว้าง */
+    }
+
+    .featured-img {
+        height: 210px;
+    }
+
+    .featured-info {
+        padding: 20px;
+        /* ลด padding ให้พอดีจอ */
+    }
+}
+
+/* ============================================================
+   RESPONSIVE: จอกว้างไม่เกิน 768px (มือถือใหญ่)
+   ซ่อน nav links, แสดงปุ่ม hamburger
+   ============================================================ */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 0 18px;
+    }
+
+    /* ซ่อน link ใน navbar บนมือถือ */
+    .nav-links {
+        display: none;
+    }
+
+    /* แสดงปุ่ม hamburger ☰ บนมือถือ */
+    .nav-hamburger {
+        display: block;
+    }
+
+    /* ลดขนาดหัวข้อ hero บนมือถือ */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    /* ลด padding ของทุก section บนมือถือ */
+    .featured-section,
+    .games-section,
+    .about-section {
+        padding: 60px 18px;
+    }
+
+    /* เปลี่ยน grid เป็น 1 คอลัมน์บนมือถือ */
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE: จอกว้างไม่เกิน 480px (มือถือเล็ก)
+   featured meta เรียงแนวตั้งแทนแนวนอน
+   ============================================================ */
+@media (max-width: 480px) {
+    .featured-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

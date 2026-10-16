@@ -83,7 +83,6 @@ const gameData = {
 document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('dark-mode-btn')) initDarkMode();
     if (document.getElementById('hamburger-btn')) initNavbar();
-    if (document.getElementById('scroll-top-btn')) initScrollTop();
 });
 
 // ==============================================================================
@@ -210,25 +209,4 @@ document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeModal();
 });
 
-// ==============================================================================
-// 10. SCROLL TO TOP: ปุ่มกดเพื่อเลื่อนกลับขึ้นบนสุด
-// ==============================================================================
-function initScrollTop() {
-    var btn = document.getElementById('scroll-top-btn');
-    if (!btn) return;
-
-    // ถ้าเลื่อนจอลงเกิน 400px ให้ปุ่มปรากฏ
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 400) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
-    });
-
-    // พอกดปุ่ม ให้เลื่อนกลับขึ้นไปบนสุดแบบ Smooth
-    btn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
 
