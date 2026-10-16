@@ -23,6 +23,20 @@ body.light-mode {
     --border: #d9e1ee;
 }
 
+body.light-mode #navbar,
+body.light-mode .mobile-menu,
+body.light-mode .site-footer {
+    background: var(--card);
+}
+
+body.light-mode .hero-section {
+    background: linear-gradient(180deg, #f5f7fb 0%, #eef2ff 100%);
+}
+
+body.light-mode #dark-mode-btn:hover {
+    background: rgba(233, 69, 96, 0.1);
+}
+
 /* ============================================================
    CSS RESET
    รีเซ็ตค่าเริ่มต้นของทุก element ให้เหมือนกันในทุก browser
