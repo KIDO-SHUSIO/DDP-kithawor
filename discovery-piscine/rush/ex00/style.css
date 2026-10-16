@@ -143,6 +143,9 @@ button {
     font-size: 1.5rem;
     cursor: pointer;
     margin-left: 8px;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ============================================================
@@ -780,6 +783,11 @@ button {
 @media (max-width: 768px) {
     #navbar {
         padding: 0 18px;
+        gap: 8px;
+    }
+
+    .nav-logo {
+        flex: 1;
     }
 
     /* ซ่อน link ใน navbar บนมือถือ */
@@ -789,7 +797,8 @@ button {
 
     /* แสดงปุ่ม hamburger ☰ บนมือถือ */
     .nav-hamburger {
-        display: block;
+        display: flex;
+        flex-shrink: 0;
     }
 
     /* ลดขนาดหัวข้อ hero บนมือถือ */
